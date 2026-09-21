@@ -132,9 +132,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 
 .hero-cupim{
   position:absolute;right:clamp(12px,3vw,56px);top:50%;transform:translateY(-50%);
-  width:min(38%,420px);color:#fff;opacity:.055;z-index:1;pointer-events:none;
+  width:min(38%,420px);height:auto;opacity:.32;z-index:1;pointer-events:none;
+  mix-blend-mode:screen;
 }
-@media (max-width:900px){.hero-cupim{right:-8%;width:62%;opacity:.045}}
+@media (max-width:900px){.hero-cupim{right:-8%;width:62%;opacity:.24}}
 
 /* ---------- regua de dados ---------- */
 .regua{border-bottom:1px solid var(--borda);background:var(--papel)}
@@ -347,10 +348,7 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="topo">
-  <svg class="hero-cupim" viewBox="0 0 200 128" aria-hidden="true" focusable="false">
-    <path d="M4 104 L4 78 L52 78 C52 34 72 12 100 12 C128 12 148 34 148 78 L148 122" fill="none" stroke="currentColor" stroke-width="9"/>
-    <path d="M148 88 L196 88" fill="none" stroke="currentColor" stroke-width="9"/>
-  </svg>
+  <img class="hero-cupim" src="hero-nelore-mono.png" alt="" aria-hidden="true">
   <div class="wrap hero-in">
     <div>
       <h1>A força da pecuária de corte nordestina começa na genética Nelore.</h1>
