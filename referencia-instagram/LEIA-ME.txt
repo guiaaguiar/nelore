@@ -1,0 +1,22 @@
+IMAGENS DE REFERENCIA - NAO USADAS NA LANDING PAGE
+==================================================
+
+Baixadas de posts.json / reels.json (CDN do Instagram) durante a
+analise do material. NENHUMA e usada em index.html.
+
+Motivo: sao flyers promocionais (azul saturado, madeira rustica, fonte
+western) ou frames de video com legenda queimada - esteticamente
+incompativeis com a pagina institucional minimalista aprovada.
+
+Ficam aqui apenas como referencia/arquivo para o cliente.
+
+Observacoes uteis extraidas delas:
+- expogaranhuns-presidente.jpg: legenda do video diz "Presidente da
+  Nelore PERNAMBUCO" (o dossie diz Nordeste) -> CONFIRMAR
+- confine-recife.jpg: flyer lista Nelore Nordeste em "APOIO", nao em
+  "REALIZACAO" -> CONFIRMAR
+- confine-recife.jpg: revela parceiros ausentes do dossie - MSD Saude
+  Animal, Allflex, Unique Beef, UFAPE
+- forum-maternidade.jpg: ~50 pessoas certificadas em Limoeiro/PE. Boa
+  prova social, mas tem legenda politica queimada e e post de deputado
+  (verificar direito de uso antes de qualquer aproveitamento).
