@@ -856,6 +856,10 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
 (function(){
   "use strict";
   document.getElementById("ano").textContent = new Date().getFullYear();
+  document.querySelectorAll("[data-video-fundo]").forEach(function(video){
+    video.muted = true;
+    video.play().catch(function(){});
+  });
 
   /* ---- unica sequencia de motion: regua de dados ---- */
   var regua = document.querySelector(".regua");
@@ -886,7 +890,7 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
     requestAnimationFrame(passo);
   }
 
-  if(reduz || !("IntersectionObserver" in window)){
+  if(!("IntersectionObserver" in window)){
     estadoFinal();
   } else if(regua){
     var obs = new IntersectionObserver(function(ents){
