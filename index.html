@@ -176,7 +176,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .sec-video .video-fundo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.72}
 .sec-video::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,15,13,.97) 0%,rgba(11,15,13,.9) 50%,rgba(11,15,13,.68) 100%),linear-gradient(0deg,rgba(11,15,13,.42),rgba(11,15,13,.2))}
 .sec-video .wrap{position:relative}
-@media (prefers-reduced-motion:reduce){.sec-video .video-fundo{display:none}}
 
 /* ---------- pilares (grid assimetrico, sem numeracao) ---------- */
 .pil{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--borda-esc)}
@@ -857,9 +856,6 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
 (function(){
   "use strict";
   document.getElementById("ano").textContent = new Date().getFullYear();
-
-  var reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduz){ document.querySelectorAll("[data-video-fundo]").forEach(function(video){ video.pause(); }); }
 
   /* ---- unica sequencia de motion: regua de dados ---- */
   var regua = document.querySelector(".regua");
