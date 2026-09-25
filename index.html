@@ -125,10 +125,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 }
 .hero-acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,3.4vw,40px)}
 
-.hero-prova{border-top:1px solid var(--borda-esc);padding-top:22px}
+.hero-vitrine{margin:0;min-height:clamp(360px,37vw,500px);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(22px,2.5vw,32px);background-image:linear-gradient(180deg,rgba(11,15,13,.04) 32%,rgba(11,15,13,.88) 100%),url(".media/Dia de campo.jpg");background-position:center;background-size:cover;border:1px solid rgba(247,246,243,.16)}
+.hero-vitrine figcaption{font-family:var(--sans);font-size:14px;font-weight:600;line-height:1.45;color:#E7EBE8;max-width:26ch}
+.hero-prova{border-top:1px solid rgba(247,246,243,.38);padding-top:18px;margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:end}
 .hero-prova dt{font-family:var(--sans);font-weight:800;font-size:clamp(40px,4.6vw,58px);letter-spacing:-0.04em;line-height:1;font-variant-numeric:tabular-nums}
-.hero-prova dd{margin:10px 0 0;color:#AFB8B4;font-size:15.5px;line-height:1.5;max-width:30ch}
-.hero-prova .div{height:1px;background:var(--borda-esc);margin:22px 0}
+.hero-prova dd{margin:0;color:#C8CFCB;font-size:14px;line-height:1.45;max-width:25ch}
+@media (max-width:900px){.hero-vitrine{min-height:330px;max-width:620px}.hero-prova{max-width:400px}}
 
 .hero-cupim{
   position:absolute;right:clamp(12px,3vw,56px);top:50%;transform:translateY(-50%);
@@ -163,6 +165,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 @media (max-width:900px){.sobre-g{grid-template-columns:1fr}}
 .sobre-txt p+p{margin-top:17px}
 .sobre-txt{font-size:clamp(16.5px,1.15vw,18px);line-height:1.68}
+.foto-contexto{margin:0 0 clamp(28px,3.2vw,42px);min-height:clamp(280px,30vw,390px);display:flex;align-items:flex-end;padding:22px;background-image:linear-gradient(180deg,transparent 42%,rgba(11,15,13,.78)),url(".media/Dia de Campo Da Fazenda Santa Clara.jpg");background-position:center;background-size:cover;border:1px solid var(--borda)}
+.foto-contexto figcaption{font-family:var(--sans);font-weight:600;font-size:14px;line-height:1.45;color:var(--papel);max-width:28ch}
 .lider{border-left:3px solid var(--verde);padding:4px 0 4px 22px;margin-top:30px}
 .lider-n{font-family:var(--sans);font-weight:700;font-size:17px;letter-spacing:-0.01em}
 .lider-c{font-size:15px;color:var(--cinza);margin-top:3px}
@@ -226,6 +230,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .ev-n{font-family:var(--sans);font-weight:700;font-size:clamp(17.5px,1.7vw,22px);letter-spacing:-0.018em}
 .ev-n span{display:block;font-family:var(--serif);font-weight:400;font-size:15.5px;color:var(--cinza);margin-top:7px;letter-spacing:0;line-height:1.55;max-width:52ch}
 .ev-l{font-size:15px;color:var(--cinza);line-height:1.5}
+
+/* ---------- registros da associacao ---------- */
+.registros{background:var(--papel);overflow:hidden}
+.registros-in{display:grid;grid-template-columns:minmax(0,4.7fr) minmax(0,5.3fr);gap:clamp(28px,4vw,68px);align-items:end}
+@media (max-width:900px){.registros-in{grid-template-columns:1fr;align-items:start}}
+.registros-cab{max-width:31rem}
+.registros-cab h2{font-size:clamp(27px,3.3vw,44px);letter-spacing:-.028em;max-width:14ch}
+.registros-cab p{margin-top:18px;color:var(--cinza);font-size:17px;line-height:1.6}
+.registros-grade{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:repeat(2,minmax(168px,1fr));gap:12px;min-height:480px}
+.registro{margin:0;display:flex;align-items:flex-end;padding:18px;background-position:center;background-size:cover;position:relative;overflow:hidden}
+.registro::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 46%,rgba(11,15,13,.78))}
+.registro figcaption{position:relative;color:#fff;font-family:var(--sans);font-size:13.5px;font-weight:600;line-height:1.4;max-width:22ch}
+.registro-principal{grid-row:span 2;background-image:url(".media/Curso aula prática.jpg")}
+.registro-campo{background-image:url(".media/Dia de campo da fazenda santa clara 2.jpg")}
+.registro-formacao{background-image:url(".media/imagem6.jpg")}
+@media (max-width:560px){.registros-grade{min-height:560px}.registro-principal{grid-row:span 2}}
 
 /* ---------- parceiros ---------- */
 .parc-g{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--borda);border-left:1px solid var(--borda)}
@@ -358,13 +378,15 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
         <a class="btn btn-s" href="#sobre">Conhecer a ACNN</a>
       </div>
     </div>
-    <dl class="hero-prova">
-      <dt>70%</dt>
-      <dd>do rebanho bovino de corte brasileiro é Nelore — a base insubstituível da produção de carne do país.</dd>
-      <div class="div"></div>
-      <dt>PE · RN · PB · AL</dt>
-      <dd>Presença ativa consolidada nos polos pecuários do Nordeste, do agreste ao sertão.</dd>
-    </dl>
+    <div>
+      <figure class="hero-vitrine" role="img" aria-label="Encontro técnico da ACNN em dia de campo">
+        <figcaption>Campo, técnica e rede: a evolução da pecuária acontece em conjunto.</figcaption>
+      </figure>
+      <dl class="hero-prova">
+        <dt>70%</dt>
+        <dd>do rebanho bovino de corte brasileiro é Nelore — a base da produção de carne do país.</dd>
+      </dl>
+    </div>
   </div>
 </section>
 
@@ -411,16 +433,21 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
           <div class="lider-c">Presidente da ACNN</div>
         </div>
       </div>
-      <div class="polos">
-        <h3>Onde a ACNN atua</h3>
-        <ul>
-          <li><b>Recife/PE</b><span>Parque do Cordeiro e a Sociedade Nordestina dos Criadores — sede histórica de encontros e simpósios do setor.</span></li>
-          <li><b>Garanhuns/PE</b><span>Agreste pernambucano em expansão acelerada como novo polo de pecuária de corte e genética de ponta.</span></li>
-          <li><b>Sertão/PE</b><span>Avanço da indústria frigorífica e dos confinamentos, com demanda por padrão constante de carcaça.</span></li>
-          <li><b>Parnamirim/RN</b><span>Presença de destaque na maior feira agropecuária do Rio Grande do Norte.</span></li>
-          <li><b>Limoeiro/PE</b><span>Capacitação de campo e fóruns regionais de manejo voltados às equipes de fazenda.</span></li>
-          <li><b>PB · AL</b><span>Articulação com criadores e entidades dos estados vizinhos.</span></li>
-        </ul>
+      <div>
+        <figure class="foto-contexto" role="img" aria-label="Representantes da ACNN em atividade no Dia de Campo da Fazenda Santa Clara">
+          <figcaption>Conhecimento compartilhado no Dia de Campo da Fazenda Santa Clara.</figcaption>
+        </figure>
+        <div class="polos">
+          <h3>Onde a ACNN atua</h3>
+          <ul>
+            <li><b>Recife/PE</b><span>Parque do Cordeiro e a Sociedade Nordestina dos Criadores — sede histórica de encontros e simpósios do setor.</span></li>
+            <li><b>Garanhuns/PE</b><span>Agreste pernambucano em expansão acelerada como novo polo de pecuária de corte e genética de ponta.</span></li>
+            <li><b>Sertão/PE</b><span>Avanço da indústria frigorífica e dos confinamentos, com demanda por padrão constante de carcaça.</span></li>
+            <li><b>Parnamirim/RN</b><span>Presença de destaque na maior feira agropecuária do Rio Grande do Norte.</span></li>
+            <li><b>Limoeiro/PE</b><span>Capacitação de campo e fóruns regionais de manejo voltados às equipes de fazenda.</span></li>
+            <li><b>PB · AL</b><span>Articulação com criadores e entidades dos estados vizinhos.</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -565,6 +592,27 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
         <span class="ev-l">Parque do Cordeiro — Recife/PE</span>
       </li>
     </ul>
+  </div>
+</section>
+
+<!-- ============ REGISTROS ============ -->
+<section class="sec registros" aria-labelledby="registros-titulo">
+  <div class="wrap registros-in">
+    <div class="registros-cab">
+      <h2 id="registros-titulo">A ACNN acontece onde a pecuária evolui.</h2>
+      <p>Nos dias de campo, nas capacitações e nas conversas que aproximam quem produz, quem pesquisa e quem decide o futuro do setor.</p>
+    </div>
+    <div class="registros-grade" aria-label="Registros de atividades da ACNN">
+      <figure class="registro registro-principal" role="img" aria-label="Curso prático da ACNN com participantes reunidos em fazenda">
+        <figcaption>Cursos e dias de campo: técnica aplicada à realidade da fazenda.</figcaption>
+      </figure>
+      <figure class="registro registro-campo" role="img" aria-label="Participantes reunidos no Dia de Campo da Fazenda Santa Clara">
+        <figcaption>Integração entre criadores e equipes.</figcaption>
+      </figure>
+      <figure class="registro registro-formacao" role="img" aria-label="Grupo certificado em jornada de formação no campo">
+        <figcaption>Formação que chega a quem faz acontecer.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
