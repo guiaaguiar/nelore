@@ -164,11 +164,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .sobre-txt{font-size:clamp(16.5px,1.15vw,18px);line-height:1.68}
 .foto-contexto{margin:0 0 clamp(28px,3.2vw,42px);min-height:clamp(280px,30vw,390px);position:relative;overflow:hidden;border:1px solid var(--borda);background:var(--tinta)}
 .foto-contexto .midia-slide{background-position:center;background-size:cover}
-.foto-contexto figcaption{position:absolute;z-index:2;left:22px;bottom:22px;font-family:var(--sans);font-weight:600;font-size:14px;line-height:1.45;color:var(--papel);max-width:28ch}
-.foto-contexto::after,.evento-foto::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 42%,rgba(11,15,13,.82))}
-.midia-controles{position:absolute;z-index:3;right:14px;bottom:14px;display:flex;gap:7px}
-.midia-controles button{width:38px;height:38px;border:1px solid rgba(247,246,243,.62);background:rgba(11,15,13,.5);color:var(--papel);font:700 23px/1 var(--sans);cursor:pointer}
-.midia-controles button:hover{background:var(--verde);border-color:var(--verde)}
+.foto-contexto .midia-slide::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(5,8,6,.95) 0%,rgba(5,8,6,.67) 28%,transparent 68%)}
+.foto-contexto figcaption{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;font-family:var(--sans);font-weight:700;font-size:14.5px;line-height:1.45;color:#fff;max-width:30ch;text-shadow:0 2px 14px rgba(0,0,0,.95)}
+.foto-contexto .midia-controles{position:absolute;z-index:3;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 8px;pointer-events:none}
+.foto-contexto .midia-controles button{width:44px;height:64px;border:0;background:transparent;color:rgba(255,255,255,.72);font:600 42px/1 var(--sans);text-shadow:0 2px 10px rgba(0,0,0,.9);cursor:pointer;pointer-events:auto;opacity:.78;transition:opacity .18s ease,transform .18s ease}
+.foto-contexto .midia-controles button:hover{color:#fff;opacity:1;transform:scale(1.08)}
 .lider{border-left:3px solid var(--verde);padding:4px 0 4px 22px;margin-top:30px}
 .lider-n{font-family:var(--sans);font-weight:700;font-size:17px;letter-spacing:-0.01em}
 .lider-c{font-size:15px;color:var(--cinza);margin-top:3px}
@@ -232,20 +232,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .sec-fundo .gen-attrs li{border-color:rgba(247,246,243,.27)}
 
 /* ---------- eventos ---------- */
+.eventos-sec{position:relative;isolation:isolate;overflow:hidden;background:var(--tinta)}
+.eventos-fundo{position:absolute;inset:0;z-index:0}
+.eventos-fundo .midia-slide{background-position:center;background-size:cover}
+.eventos-fundo video{width:100%;height:100%;object-fit:cover}
+.eventos-sec::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,15,13,.97),rgba(11,15,13,.87) 58%,rgba(11,15,13,.76)),linear-gradient(0deg,rgba(11,15,13,.55),rgba(11,15,13,.26))}
+.eventos-frente{position:relative;z-index:2}
 .eventos-layout{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.35fr);gap:clamp(32px,5vw,72px);align-items:start}
-.eventos-fotos{min-height:600px;position:sticky;top:96px;overflow:hidden;background:var(--tinta);border:1px solid var(--borda)}
-.evento-foto{margin:0;display:block;padding:0;overflow:hidden;background-position:center;background-size:cover}
-.evento-foto video{width:100%;height:100%;object-fit:cover}
-.evento-foto figcaption{position:absolute;z-index:2;left:18px;bottom:18px;color:#fff;font-family:var(--sans);font-size:13px;font-weight:600;line-height:1.4;max-width:24ch}
-.ev{list-style:none;margin:0;padding:0;border-top:1px solid var(--borda)}
+.eventos-fotos{display:grid;grid-template-columns:1.08fr .92fr;grid-template-rows:repeat(2,minmax(210px,1fr));gap:10px;min-height:600px;position:sticky;top:96px}
+.evento-foto{margin:0;display:flex;align-items:flex-end;padding:18px;background-position:center;background-size:cover;position:relative;overflow:hidden;border:1px solid rgba(247,246,243,.22)}
+.evento-foto::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(11,15,13,.86))}
+.evento-foto figcaption{position:relative;color:#fff;font-family:var(--sans);font-size:13px;font-weight:700;line-height:1.4;max-width:20ch;text-shadow:0 2px 10px rgba(0,0,0,.75)}
+.evento-foto-principal{grid-row:span 2;background-image:url(".media/Curso de Gestão.jpg")}
+.evento-foto-campo{background-image:url(".media/Curso aula prática.jpg")}
+.evento-foto-formacao{background-image:url(".media/imagem6.jpg")}
+.ev{list-style:none;margin:0;padding:0;border-top:1px solid rgba(247,246,243,.3)}
 .ev li{
   display:grid;grid-template-columns:minmax(88px,.8fr) minmax(0,4fr);
-  gap:8px clamp(18px,2vw,30px);padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid var(--borda);align-items:baseline;
+  gap:8px clamp(18px,2vw,30px);padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid rgba(247,246,243,.24);align-items:baseline;
 }
-.ev-d{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--verde-txt);text-transform:uppercase;font-variant-numeric:tabular-nums}
+.ev-d{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--verde-claro);text-transform:uppercase;font-variant-numeric:tabular-nums}
 .ev-n{font-family:var(--sans);font-weight:700;font-size:clamp(17.5px,1.7vw,22px);letter-spacing:-0.018em}
-.ev-n span{display:block;font-family:var(--serif);font-weight:400;font-size:15.5px;color:var(--cinza);margin-top:7px;letter-spacing:0;line-height:1.55;max-width:52ch}
-.ev-l{grid-column:2;font-size:14.5px;color:var(--cinza);line-height:1.5}
+.ev-n span{display:block;font-family:var(--serif);font-weight:400;font-size:15.5px;color:#D4DAD6;margin-top:7px;letter-spacing:0;line-height:1.55;max-width:52ch}
+.ev-l{grid-column:2;font-size:14.5px;color:#AFB8B4;line-height:1.5}
 @media (max-width:960px){.eventos-layout{grid-template-columns:1fr}.eventos-fotos{position:static;min-height:520px}}
 @media (max-width:560px){.eventos-fotos{min-height:450px}.ev li{grid-template-columns:1fr;gap:7px}.ev-l{grid-column:1}}
 
@@ -562,42 +571,37 @@ form{background:var(--tinta-elev);padding:clamp(26px,3.4vw,44px);border:1px soli
 </section>
 
 <!-- ============ EVENTOS ============ -->
-<section class="sec" id="eventos" style="background:var(--papel-alt)">
-  <div class="wrap">
+<section class="sec escuro eventos-sec" id="eventos" data-carrossel>
+  <div class="eventos-fundo" aria-hidden="true">
+    <div class="midia-slide is-ativa">
+      <video muted playsinline preload="metadata">
+        <source src=".media/video o criadores e autoridades (2).mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="midia-slide">
+      <video muted playsinline preload="metadata">
+        <source src=".media/video NELORE FEST Nordeste acontece todo ano em dezembro a festa dos Criadores (3).mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="midia-slide" data-duracao="30000" style="background-image:url('.media/forum-maternidade.jpg')"></div>
+    <div class="midia-slide midia-esquerda" data-duracao="30000" style="background-image:url('.media/jornada-biotec.jpg')"></div>
+  </div>
+  <div class="wrap eventos-frente">
     <div class="sec-cab">
       <h2>Atividade institucional constante.</h2>
       <p>A ACNN está presente nas grandes exposições agropecuárias da região e realiza fóruns técnicos que levam conhecimento aplicado diretamente às equipes de fazenda.</p>
     </div>
     <div class="eventos-layout">
-      <div class="eventos-fotos" data-carrossel aria-label="Vídeos e fotos de eventos da ACNN">
-        <figure class="evento-foto midia-slide midia-video is-ativa" data-video>
-          <video muted playsinline preload="metadata" aria-label="Vídeo de criadores e autoridades em evento da ACNN">
-            <source src=".media/video o criadores e autoridades (2).mp4" type="video/mp4">
-          </video>
-          <figcaption>Encontros que conectam criadores, técnicos e autoridades.</figcaption>
-        </figure>
-        <figure class="evento-foto midia-slide midia-video" data-video>
-          <video muted playsinline preload="metadata" aria-label="Vídeo do Nelore Fest Nordeste">
-            <source src=".media/video NELORE FEST Nordeste acontece todo ano em dezembro a festa dos Criadores (3).mp4" type="video/mp4">
-          </video>
-          <figcaption>Nelore Fest: a festa anual dos criadores.</figcaption>
-        </figure>
-        <figure class="evento-foto midia-slide" data-duracao="30000" role="img" aria-label="Curso de gestão integrado à pecuária de corte" style="background-image:url('.media/Curso de Gestão.jpg')">
+      <div class="eventos-fotos" aria-label="Registros de eventos e capacitações da ACNN">
+        <figure class="evento-foto evento-foto-principal" role="img" aria-label="Curso de gestão integrado à pecuária de corte">
           <figcaption>Gestão aplicada à pecuária de corte.</figcaption>
         </figure>
-        <figure class="evento-foto midia-slide midia-esquerda" data-duracao="30000" role="img" aria-label="Curso prático com produtores reunidos no campo" style="background-image:url('.media/Curso aula prática.jpg')">
+        <figure class="evento-foto evento-foto-campo" role="img" aria-label="Curso prático com produtores reunidos no campo">
           <figcaption>Aprendizado dentro da fazenda.</figcaption>
         </figure>
-        <figure class="evento-foto midia-slide" data-duracao="30000" role="img" aria-label="Turma certificada após capacitação da associação" style="background-image:url('.media/imagem6.jpg')">
+        <figure class="evento-foto evento-foto-formacao" role="img" aria-label="Turma certificada após capacitação da associação">
           <figcaption>Formação técnica com resultado.</figcaption>
         </figure>
-        <figure class="evento-foto midia-slide midia-esquerda" data-duracao="30000" role="img" aria-label="Conferência sobre gestão integrada na pecuária de corte" style="background-image:url('.media/santa-clara.jpg')">
-          <figcaption>Conhecimento técnico da cria à terminação.</figcaption>
-        </figure>
-        <div class="midia-controles" aria-label="Trocar mídia de eventos">
-          <button type="button" data-anterior aria-label="Mídia anterior">‹</button>
-          <button type="button" data-proximo aria-label="Próxima mídia">›</button>
-        </div>
       </div>
       <ul class="ev">
       <li>
